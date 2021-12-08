@@ -2,7 +2,7 @@ import os from 'os'
 import path from 'path'
 
 // Store configs
-const STORE_VERSION = 2
+const STORE_VERSION = 1
 export const ROOT_CACHE_PATH = path.join(
 	os.homedir(),
 	`.grit/V${STORE_VERSION}`

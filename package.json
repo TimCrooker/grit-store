@@ -1,6 +1,6 @@
 {
 	"name": "gritstore",
-	"version": "1.0.0",
+	"version": "0.0.0",
 	"description": "The caching mechanism for grit",
 	"main": "dist/index.js",
 	"bin": {
