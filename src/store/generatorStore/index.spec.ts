@@ -1,4 +1,4 @@
-import { ParsedGenerator } from '@/utils/parseGenerator'
+import { ParsedGenerator } from 'gritparse'
 import path from 'path'
 import { GeneratorStore } from './'
 
@@ -19,7 +19,7 @@ describe('Generator Store', () => {
 	})
 
 	it('get generators from store', () => {
-		expect(store.get('12345678')).toBe(generator)
+		expect(store.get('12345678')).toEqual(generator)
 	})
 
 	it('read store', () => {

@@ -60,7 +60,8 @@ export abstract class BaseStore<T = any> {
 	 * are protected from being written to if they already exist
 	 */
 	set(key: string, value: T | any, overwrite = true): this {
-		const alreadyCached = this.safeData[key]
+		this.data = this.read()
+		const alreadyCached = this.data[key]
 		if (alreadyCached && !overwrite) {
 			logger.debug('Not overwriting item in cache:', {
 				key: alreadyCached,
@@ -84,7 +85,8 @@ export abstract class BaseStore<T = any> {
 	 * Get item from the store whose key matches the provided one
 	 */
 	get(key: string): T | undefined | any {
-		return dotProp.get(this.safeData, key)
+		this.data = this.read()
+		return dotProp.get(this.data, key)
 	}
 
 	/**

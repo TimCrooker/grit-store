@@ -18,7 +18,7 @@ describe('Answer Store', () => {
 	})
 
 	it('get generators from store', () => {
-		expect(store.get('12345678')).toBe(answer)
+		expect(store.get('12345678')).toEqual(answer)
 	})
 
 	it('read store', () => {
