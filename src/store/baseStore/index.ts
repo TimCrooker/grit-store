@@ -4,7 +4,7 @@ import { mkdirSync } from 'fs'
 import dotProp from 'dot-prop'
 import path from 'path'
 import { ROOT_CACHE_PATH } from '@/config'
-import { logger } from '@/logger'
+import { logger } from 'swaglog'
 
 export type StoreFileData<T = any> = Record<string, T>
 
@@ -85,6 +85,16 @@ export abstract class BaseStore<T = any> {
 	 */
 	get(key: string): T | undefined | any {
 		return dotProp.get(this.data, key)
+	}
+
+	/**
+	 * Deletes an item from the store
+	 */
+	delete(key: string): this {
+		logger.debug('Deleting', key, 'from', path.basename(this.storeFilePath))
+		dotProp.delete(this.data, key)
+		writeFileSync(this.storeFilePath, JSON.stringify(this.data), 'utf8')
+		return this
 	}
 
 	/** Return an array of the values in the store for iteration */

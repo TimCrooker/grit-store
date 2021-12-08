@@ -1,5 +1,18 @@
+import { NpmGenerator, ParsedGenerator, RepoGenerator } from 'gritparse'
+import { logger } from 'swaglog'
 import { UpdateInfo } from 'update-notifier'
 import { BaseStoreOptions, BaseStore } from '../baseStore'
+import { installGenerator } from './installGenerator'
+
+export function getRepoGeneratorName(generator: RepoGenerator): string {
+	return `${generator.prefix === 'github' ? '' : `${generator.prefix}:`}${
+		generator.user
+	}/${generator.repo}`
+}
+
+export function getNpmGeneratorName(generator: NpmGenerator): string {
+	return generator.name.replace(`grit-`, '')
+}
 
 export interface StoreNpmGenerator extends NpmGenerator {
 	runCount: number
@@ -22,13 +35,32 @@ export class GeneratorStore extends BaseStore<StoreGenerator> {
 	}
 
 	/** Add a new generator to the store if it doesn't already exist */
-	add(generator: ParsedGenerator): this {
+	add(generator: NpmGenerator | RepoGenerator): this {
+		logger.debug(`Adding generator`)
+		installGenerator
 		this.set(generator.hash, generator)
 		return this
 	}
 
-	/** Search the store for generators matching the current one's name */
-	getByName(generator: ParsedGenerator): StoreGenerator[] {
+	/** Add a new generator to the store if it doesn't already exist */
+	update(generator: NpmGenerator | RepoGenerator): this {
+		logger.debug(`Updating generator`)
+		this.set(generator.hash, generator)
+		return this
+	}
+
+	/** Remove a generator from the store */
+	remove(generator: ParsedGenerator): this {
+		this.delete(generator.hash)
+		return this
+	}
+
+	/**
+	 * Search the store for generators matching the current one's name
+	 *
+	 * @param generator The generator to search for
+	 */
+	getByName(generator: ParsedGenerator): StoreGenerator | undefined {
 		return this.getAllWhere((key, value) => {
 			if (generator.type === 'repo' && value.type === 'repo') {
 				return (
@@ -40,7 +72,7 @@ export class GeneratorStore extends BaseStore<StoreGenerator> {
 				return generator.name === value.name
 			}
 			return false
-		})
+		})[0]
 	}
 
 	/** Group generators by name */

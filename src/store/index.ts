@@ -1,4 +1,4 @@
-import { logger, LogLevel } from '@/logger'
+import { logger, LogLevel } from 'swaglog'
 import { AnswerStore } from './answerStore'
 import { GeneratorStore } from './generatorStore'
 

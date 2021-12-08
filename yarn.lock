@@ -1486,6 +1486,13 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
+"@types/axios@^0.14.0":
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/@types/axios/-/axios-0.14.0.tgz#ec2300fbe7d7dddd7eb9d3abf87999964cafce46"
+  integrity sha1-7CMA++fX3d1+udOr+HmZlkyvzkY=
+  dependencies:
+    axios "*"
+
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.14", "@types/babel__core@^7.1.7":
   version "7.1.17"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.17.tgz#f50ac9d20d64153b510578d84f9643f9a3afbe64"
@@ -2071,7 +2078,7 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-axios@^0.24.0:
+axios@*, axios@^0.24.0:
   version "0.24.0"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.24.0.tgz#804e6fa1e4b9c5288501dd9dff56a7a0940d20d6"
   integrity sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==
@@ -4002,6 +4009,22 @@ grit-cli@^0.5.8:
     rimraf "^3.0.2"
     update-notifier "^5.1.0"
 
+gritparse@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/gritparse/-/gritparse-0.2.0.tgz#eea44e033827df7f65b3afc4b456f4279f0c08a6"
+  integrity sha512-iPRRphaGSn4T80jM02ii/YCeWWVS/34D16kcHxiaur5oqlUmdd7GupWpKVO4gf/sl6O7Q1iljRJkkovcenez7g==
+  dependencies:
+    "@egoist/extract-zip" "^2.0.1"
+    axios "^0.24.0"
+    cross-spawn "^7.0.3"
+    dot-prop "^6.0.1"
+    grit-cli "^0.5.8"
+    hash-sum "^2.0.0"
+    move-file "^2.1.0"
+    parse-package-name "^1.0.0"
+    swaglog "^0.0.0"
+    youtill "^0.1.0"
+
 growly@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
@@ -5564,7 +5587,7 @@ move-file@*:
   dependencies:
     path-exists "^5.0.0"
 
-move-file@2.1.0:
+move-file@2.1.0, move-file@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/move-file/-/move-file-2.1.0.tgz#3bec9d34fbe4832df6865f112cda4492b56e8507"
   integrity sha512-i9qLW6gqboJ5Ht8bauZi7KlTnQ3QFpBCvMvFfEcHADKgHGeJ9BZMO7SFCTwHPV9Qa0du9DYY1Yx3oqlGt30nXA==
@@ -5979,6 +6002,11 @@ parse-package-name@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/parse-package-name/-/parse-package-name-0.1.0.tgz#3f44dd838feb4c2be4bf318bae4477d7706bade4"
   integrity sha1-P0Tdg4/rTCvkvzGLrkR313BrreQ=
+
+parse-package-name@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/parse-package-name/-/parse-package-name-1.0.0.tgz#1a108757e4ffc6889d5e78bcc4932a97c097a5a7"
+  integrity sha512-kBeTUtcj+SkyfaW4+KBe0HtsloBJ/mKTPoxpVdA57GZiPerREsUWJOhVj9anXweFiJkm5y8FG1sxFZkZ0SN6wg==
 
 parse-passwd@^1.0.0:
   version "1.0.0"
@@ -7032,6 +7060,13 @@ supports-hyperlinks@^2.0.0:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
 
+swaglog@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/swaglog/-/swaglog-0.0.0.tgz#36bca9109ff969830bb4e6e7a7c12e6707011819"
+  integrity sha512-4au/ejUiz7Vd6uDWjjoXBg3GAbJLkOvI7PDQjQZcXFHyogFlumkYb9EctPH4ALU3MzbMOOb7xFLw7RovbLsVdQ==
+  dependencies:
+    chalk "^4.1.2"
+
 symbol-tree@^3.2.4:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
@@ -7747,3 +7782,29 @@ yn@3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/yn/-/yn-3.1.1.tgz#1e87401a09d767c1d5eab26a6e4c185182d2eb50"
   integrity sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
+
+youtill@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/youtill/-/youtill-0.1.0.tgz#09d9f758abdf07ed61f076772d101f49c31de202"
+  integrity sha512-mTbJ40NFiKGzebt+rGIyDhF25xlw2RUmbvPVaq+qTE6vXDsp5k5YfOAxmWWs+Qjlii8hITGNByUp1c4/E3HRDA==
+  dependencies:
+    axios "^0.24.0"
+    chalk "^4.1.2"
+    chokidar "^3.5.2"
+    cp-file "^9.1.0"
+    cross-spawn "^7.0.3"
+    figlet "^1.5.2"
+    fs-extra "^9.1.0"
+    is-binary-path "^2.1.0"
+    joycon "^2.2.5"
+    lodash "^4.17.21"
+    log-update "^4.0.0"
+    majo "^0.10.1"
+    micromatch "4.0.4"
+    move-file "2.1.0"
+    open "^8.4.0"
+    ora "4.1.1"
+    parse-package-name "^0.1.0"
+    resolve-from "^5.0.0"
+    rimraf "^3.0.2"
+    swaglog "^0.0.0"
