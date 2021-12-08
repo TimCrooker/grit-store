@@ -37,7 +37,7 @@ export class GeneratorStore extends BaseStore<StoreGenerator> {
 	/** Add a new generator to the store if it doesn't already exist */
 	add(generator: NpmGenerator | RepoGenerator): this {
 		logger.debug(`Adding generator`)
-		installGenerator
+		installGenerator(generator)
 		this.set(generator.hash, generator)
 		return this
 	}
@@ -45,6 +45,7 @@ export class GeneratorStore extends BaseStore<StoreGenerator> {
 	/** Add a new generator to the store if it doesn't already exist */
 	update(generator: NpmGenerator | RepoGenerator): this {
 		logger.debug(`Updating generator`)
+		installGenerator(generator, true)
 		this.set(generator.hash, generator)
 		return this
 	}
