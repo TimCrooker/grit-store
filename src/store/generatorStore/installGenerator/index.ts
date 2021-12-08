@@ -1,6 +1,6 @@
 import { PACKAGES_CACHE_PATH } from '@/config'
 import { spinner } from '@/utils/spinner'
-import { NpmGenerator, RepoGenerator, hasGeneratorConfig } from 'gritparse'
+import { hasGeneratorConfig, NpmGenerator, RepoGenerator } from 'gritenv'
 import path from 'path'
 import { logger } from 'swaglog'
 import {

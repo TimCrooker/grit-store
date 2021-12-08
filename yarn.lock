@@ -3868,6 +3868,41 @@ grit-cli@^0.5.8:
     rimraf "^3.0.2"
     update-notifier "^5.1.0"
 
+gritenv@0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/gritenv/-/gritenv-0.2.2.tgz#e96dda32df9725ccd4694b8204e12d96895c48f4"
+  integrity sha512-Q8tp1+jmVuL1HsSaLqJUpQqcVDeVDLczOle4qVA9ZerZAMu5AonaoSbkT4y+n4XMwzKnADbWDKg6cZpWfvDBvw==
+  dependencies:
+    axios "^0.24.0"
+    chalk "^4.1.2"
+    chokidar "^3.5.2"
+    commander "^8.3.0"
+    cp-file "^9.1.0"
+    cross-spawn "^7.0.3"
+    dot-prop "^5.3.0"
+    ejs "^3.1.6"
+    figlet "^1.5.2"
+    fs-extra "^9.1.0"
+    gritstore "^1.1.1"
+    hash-sum "^2.0.0"
+    inquirer "^8.2.0"
+    inquirer-autocomplete-prompt "^1.4.0"
+    is-binary-path "^2.1.0"
+    joycon "^2.2.5"
+    lodash "^4.17.21"
+    log-update "^4.0.0"
+    majo "^0.10.1"
+    micromatch "4.0.4"
+    move-file "2.1.0"
+    open "^8.4.0"
+    ora "4.1.1"
+    parse-package-name "^1.0.0"
+    resolve-from "^5.0.0"
+    rimraf "^3.0.2"
+    swaglog "^0.0.0"
+    update-notifier "^5.1.0"
+    youtill "^0.1.0"
+
 gritparse@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/gritparse/-/gritparse-0.2.0.tgz#eea44e033827df7f65b3afc4b456f4279f0c08a6"
@@ -3881,6 +3916,19 @@ gritparse@^0.2.0:
     hash-sum "^2.0.0"
     move-file "^2.1.0"
     parse-package-name "^1.0.0"
+    swaglog "^0.0.0"
+    youtill "^0.1.0"
+
+gritstore@^1.1.1:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/gritstore/-/gritstore-1.1.2.tgz#fb63d36abfe9218c3d4f7cc1a7342ce0f7681ffe"
+  integrity sha512-Hv9YK1Xiap5gcVWD/paCsIALs8Gh1lf5VBF7rzJ9jfobge8jTiv0KQ0jFx8SbDqYmehAlZZw8m+Cmbr2B9xGAA==
+  dependencies:
+    "@types/axios" "^0.14.0"
+    axios "^0.24.0"
+    dot-prop "^6.0.1"
+    grit-cli "^0.5.8"
+    gritparse "^0.2.0"
     swaglog "^0.0.0"
     youtill "^0.1.0"
 

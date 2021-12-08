@@ -13,7 +13,6 @@
 		"!**/*.(test|spec).ts"
 	],
 	"scripts": {
-		"start": "npm run build && npm run cli",
 		"build:watch": "nodemon --watch src -e ts --ignore dist --exec npm run build",
 		"build": "npm run clean && tsup src/index.ts --dts",
 		"clean": "rimraf ./dist",
@@ -25,14 +24,13 @@
 	},
 	"license": "MIT",
 	"engines": {
-		"node": ">=12"
+		"node": ">=14"
 	},
 	"dependencies": {
 		"@types/axios": "^0.14.0",
 		"axios": "^0.24.0",
 		"dot-prop": "^6.0.1",
-		"grit-cli": "^0.5.8",
-		"gritparse": "^0.2.0",
+		"gritenv": "0.2.2",
 		"swaglog": "^0.0.0",
 		"youtill": "^0.1.0"
 	},
