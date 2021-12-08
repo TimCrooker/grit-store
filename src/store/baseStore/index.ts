@@ -120,7 +120,7 @@ export abstract class BaseStore<T = any> {
 		return this.listify().length === 0
 	}
 
-	get safeData(): typeof this.data {
+	get safeData(): StoreFileData<T> {
 		this.data = this.read()
 		return this.data
 	}
