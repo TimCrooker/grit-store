@@ -60,7 +60,7 @@ export abstract class BaseStore<T = any> {
 	 * are protected from being written to if they already exist
 	 */
 	set(key: string, value: T | any, overwrite = true): this {
-		const alreadyCached = this.data[key]
+		const alreadyCached = this.safeData[key]
 		if (alreadyCached && !overwrite) {
 			logger.debug('Not overwriting item in cache:', {
 				key: alreadyCached,
@@ -84,13 +84,14 @@ export abstract class BaseStore<T = any> {
 	 * Get item from the store whose key matches the provided one
 	 */
 	get(key: string): T | undefined | any {
-		return dotProp.get(this.data, key)
+		return dotProp.get(this.safeData, key)
 	}
 
 	/**
 	 * Deletes an item from the store
 	 */
 	delete(key: string): this {
+		this.data = this.read()
 		logger.debug('Deleting', key, 'from', path.basename(this.storeFilePath))
 		dotProp.delete(this.data, key)
 		writeFileSync(this.storeFilePath, JSON.stringify(this.data), 'utf8')
@@ -99,7 +100,7 @@ export abstract class BaseStore<T = any> {
 
 	/** Return an array of the values in the store for iteration */
 	listify(): T[] {
-		return Object.values(this.data)
+		return Object.values(this.safeData)
 	}
 
 	/**
@@ -108,7 +109,7 @@ export abstract class BaseStore<T = any> {
 	 * gets passed a function that is run for each item of of the store used to match items
 	 */
 	getAllWhere(filterFunction: (key: string, value: any) => boolean): any[] {
-		return Object.entries(this.data)
+		return Object.entries(this.safeData)
 			.filter(([key, value]) => filterFunction(key, value))
 			.map(([, value]) => {
 				return value
@@ -117,5 +118,10 @@ export abstract class BaseStore<T = any> {
 
 	get isEmpty(): boolean {
 		return this.listify().length === 0
+	}
+
+	get safeData(): typeof this.data {
+		this.data = this.read()
+		return this.data
 	}
 }
