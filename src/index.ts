@@ -6,3 +6,10 @@ export {
 	PACKAGES_CACHE_PATH,
 	REPOS_CACHE_PATH,
 } from './config'
+
+export {
+	StoreGenerator,
+	GroupedGenerators,
+	StoreRepoGenerator,
+	StoreNpmGenerator,
+} from './store/generatorStore'
